@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Stock Display</title>
+    <style>
+        body {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: white;
+        }
+        .container {
+            display: flex;
+            width: 90%;
+            gap: 2%;
+        }
+        iframe {
+            width: 48%;
+            height: 750px;
+            border: none;
+        }
+    </style>
+    <script>
+        function refreshIframes() {
+            document.getElementById('iframe1').src += '';
+            document.getElementById('iframe2').src += '';
+        }
+
+        setInterval(refreshIframes, 1000); // Refresh every 2 seconds
+    </script>
+</head>
+<body>
+    <div class="container">
+        <iframe id="iframe1" src="http://192.168.1.250:81/DisplayStock?seqid=1" title="Stock Display 1"></iframe>
+        <iframe id="iframe2" src="http://192.168.1.250:81/DisplayStock?seqid=2" title="Stock Display 2"></iframe>
+    </div>
+</body>
+</html>
